@@ -5,35 +5,92 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ye Lin Htet</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/png" href="image/YELINDEV.png">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-danger">
-	<a href="#" class="navbar-brand">
-		<img src="image/YELINDEV.png" class="rounded-circle" width="150px" height="150px">
-	</a>
-	<a href="#" class="navbar-brand mr-auto">
-		<h1 style="font-family: 'Fredoka One', cursive;">Ye Lin Htet</h1>
-	</a>
-	<div class="collapse navbar-collapse">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a href="#" class="nav-link">About</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">Skills</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">Projects</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">Contact</a>
-			</li>
-		</ul>
-	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-danger sticky-top">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">YE LIN HTET</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
+	      <ul class="navbar-nav">
+	        <li class="nav-item">
+	          <a class="nav-link" href="#">About</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" href="#">Projects</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" href="#">Skills</a>
+	        </li>
+	        <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            Blog
+	          </a>
+	          <ul class="dropdown-menu active" aria-labelledby="navbarDropdownMenuLink">
+	            <li><a class="dropdown-item" href="#">About Web</a></li>
+	            <li><a class="dropdown-item" href="#">Opreating System</a></li>
+	            <li><a class="dropdown-item" href="#">Basic Digital Skills</a></li>
+	          </ul>
+	        </li>
+	        <li class="nav-item active">
+	          <a class="nav-link" href="#">Contact</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
 	</nav>
 	<img src="image/pexels-christian-heitz-842711.jpg" width="100%" height="800">
+	<h1 class="text-center">My Skills</h1>
+	<div id="piechart"></div>
+	<!-- footer start -->
+      <footer class="container-fluid text-center mt-5 bg-secondary" id="ft">
+         <div class="py-5">
+            <p class="text-dark my-3">CopyRight To Ye Lin Htet @ 2021</p>
+            <p class="">
+               <a href="tel:+959788665400"><i class="fas fa-phone fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="far fa-envelope fa-2x mx-2 text-light"></i></i></a>
+               <a href=""><i class="fab fa-linkedin fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="fab fa-github fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="fab fa-facebook fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="fab fa-whatsapp fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="fab fa-telegram fa-2x mx-2 text-light"></i></a>
+               <a href=""><i class="fab fa-viber fa-2x mx-2 text-light"></i></a>
+            </p>
+         </div>
+      </footer>
+      <!-- footer end -->
+	<script type="text/javascript">
+	// Load google charts
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+
+	// Draw the chart and set the chart values
+	function drawChart() {
+	  var data = google.visualization.arrayToDataTable([
+	  ['Task', 'Hours per Day'],
+	  ['HTML', 10],
+	  ['CSS', 2],
+	  ['Javascript', 4],
+	  ['Bootstrap',1.5],
+	  ['Jquery',2],
+	  ['Node.js', 0.5],
+	  ['PHP', 8]
+	]);
+
+	  // Optional; add a title and set the width and height of the chart
+	  var options = {'title':'My Programming Languages', 'width':1000, 'height':1000};
+
+	  // Display the chart inside the <div> element with id="piechart"
+	  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+	  chart.draw(data, options);
+	}
+	</script>
 </body>
 </html>
